@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<head>
+<title>Завдання №4</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<style type="text/css">
+*{margin:0;padding:0;}
+html {
+    height:100%;
+}
+body{
+    background: #FFF;
+    color:#333;
+    height:100%;
+}
+table {
+    border:solid 1px #666;
+    border-collapse: collapse;
+}
+td {
+    width:50px;
+    height:50px;
+    border:solid 1px #666;
+    padding: 0.5em;
+}
+</style>
+ <input type="color" id="myColor">
+<script type="text/javascript"><!--
+function init() {
+
+    if (arguments.callee.done) return;
+    arguments.callee.done = true;
+
+    if (_timer) {
+        clearInterval(_timer);
+        _timer = null;
+    }
+    parseTable();       
+    }
+
+if (document.addEventListener) {
+    document.addEventListener("DOMContentLoaded", init, false);
+}
+
+    document.write("<script id=__ie_onload defer src=javascript:void(0)><\/script>");
+    var script = document.getElementById("__ie_onload");
+    script.onreadystatechange = function() {
+        if (this.readyState == "complete") {
+            init(); 
+        }
+    };
+if (/WebKit/i.test(navigator.userAgent)) { // sniff
+    var _timer = setInterval(function() {
+        if (/loaded|complete/.test(document.readyState)) {
+            init(); // call the onload handler
+        }
+    }, 10);
+}
+window.onload = init;
+ 
+ var arr=[];
+
+function parseTable() {
+
+var tbls = document.getElementsByTagName("TABLE");
+for (var i=0; i<tbls.length; i++) {
+
+    for (var t=0; t<tbls[i].rows.length; t++) {
+ 
+        for (var c=0; c<tbls[i].rows[t].cells.length; c++) {
+
+            var cls = tbls[i].rows[t].cells[c];
+
+            color=Math.round(255.0*Math.random());
+            r=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            g=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            b=color.toString(16);
+                        
+ 		var s="#"+ r+g+b;
+                        
+ 		while(s.length<7)
+			{
+				s=s+"0";
+			}	
+		var j=0;
+		while(j<arr.length-1)
+{
+if(arr[j]===s)
+{
+color=Math.round(255.0*Math.random());
+            r=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            g=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            b=color.toString(16);
+                        
+ 		var s="#"+ r+g+b;
+                        
+ 		while(s.length<7)
+			{
+				s=s+"0";
+			}	
+j=0
+}
+j+=1;
+}
+arr.push(s);
+
+             cls.style.background =s;
+
+            
+        }
+    }
+}
+}
+function changeColor()
+        {
+            var cell = document.getElementsByTagName("td");
+            for (var i = 0; i < cell.length; i++)
+            {
+
+                cell[i].onclick = function (evt)
+                {
+		color=Math.round(255.0*Math.random());
+            r=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            g=color.toString(16);
+            color=Math.round(255.0*Math.random());
+            b=color.toString(16);
+		var s="#"+ r+g+b;
+                        
+ 		if(s.length<7)
+			{
+				s=s+"0";
+			}
+                    evt.target.style.background =s;
+
+                }
+		cell[i].ondblclick=function(e)
+		{
+		var x =document.getElementById("myColor").value;
+
+		e.target.style.background =x;
+            	e.style.color = "#fff";
+		e.appendChild(x);
+		}
+	}
+
+
+}
+     
+     
+        window.onload = changeColor;
+
+
+//--></script>
+ 
+</head>
+<body>
+<br>
+<br>
+<center>
+<br><h1>Таблиця</h1>
+<br>
+<br>
+<br>
+<table id=table1;>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ <tr>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+  <td>&nbsp;</td>
+ </tr>
+ 
+</table>
+</center>
+
+</body>
+</html>

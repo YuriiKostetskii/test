@@ -1,0 +1,3 @@
+﻿  class.cpp
+C:\test\class\class.cpp(540,14): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  class.vcxproj -> C:\test\class\Debug\class.exe

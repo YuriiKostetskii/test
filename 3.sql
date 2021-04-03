@@ -1,0 +1,1 @@
+EXEC playerInsert 'Kanafon Y.', 'Ukraine','Khariv','LaLiga',4
